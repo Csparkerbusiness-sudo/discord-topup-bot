@@ -1,5 +1,5 @@
-console.log("Worker is running");
+console.log("Worker started");
 
 setInterval(() => {
-  console.log("Doing background work...");
-}, 10000);
+  console.log("Running background job...");
+}, 5000);
