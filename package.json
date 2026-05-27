@@ -1,17 +1,11 @@
 {
-  "name": "gamepoint-discord-bot",
+  "name": "discord-bot",
   "version": "1.0.0",
-  "description": "Discord bot for Game Point",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^14.15.3",
-    "dotenv": "^16.4.5"
-  },
-  "engines": {
-    "node": ">=18"
+    "discord.js": "^14.0.0"
   }
 }
