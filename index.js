@@ -1,25 +1,12 @@
 require('dotenv').config();
-
-const express = require('express');
-console.log("\x1b[36m%s\x1b[0m", "🎉 Your Discord bot is running! Hello, Terminal! 🎉");
 const { Client, GatewayIntentBits } = require('discord.js');
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Bot is running!');
-});
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Web server started');
-});
-
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds]
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
 
 client.once('ready', () => {
-  console.log(`${client.user.tag} is online!`);
+  console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(process.env.TOKEN);
