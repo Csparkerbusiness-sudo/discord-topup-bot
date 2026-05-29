@@ -1,29 +1,19 @@
-require('dotenv').config();
-const express = require('express');
-const { Client, GatewayIntentBits } = require('discord.js');
-
+const express = require("express");
 const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Bot is running!');
-});
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Web server running on port ${PORT}`);
+// KEEP SERVER ALIVE
+app.get("/", (req, res) => {
+  res.send("Bot is running successfully");
 });
 
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent
-  ]
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
-client.once('ready', () => {
-  console.log(`Logged in as ${client.user.tag}`);
-});
-
-client.login(process.env.TOKEN);
+/*
+====================================
+MTUwNjQ2MDIxMjI1MTMzMjYzNg.G8n71z.3icpf74sBp1LjkbOTX46Z8Z7jKQDKkTUs44mRI
+====================================
+*/
