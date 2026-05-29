@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+console.log("\x1b[36m%s\x1b[0m", "🎉 Your Discord bot is running! Hello, Terminal! 🎉");
 const { Client, GatewayIntentBits } = require('discord.js');
 
 const app = express();
